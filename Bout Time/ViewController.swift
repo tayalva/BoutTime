@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController {
+    @IBOutlet weak var up4: UIButton!
+    @IBOutlet weak var eventLabel1: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        up4.setImage(UIImage(named: "up_full_selected.png"), for: UIControlState.normal)
+        
     }
 
     override func didReceiveMemoryWarning() {
