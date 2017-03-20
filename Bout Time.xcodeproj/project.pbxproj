@@ -32,6 +32,7 @@
 		A672F2D91E804556007C9FA2 /* up_half_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = A672F2C51E804556007C9FA2 /* up_half_selected.png */; };
 		A672F2DA1E804556007C9FA2 /* up_half.png in Resources */ = {isa = PBXBuildFile; fileRef = A672F2C61E804556007C9FA2 /* up_half.png */; };
 		A672F2DB1E804556007C9FA2 /* webview_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = A672F2C71E804556007C9FA2 /* webview_bar.png */; };
+		A672F2DD1E807CC1007C9FA2 /* EventsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A672F2DC1E807CC1007C9FA2 /* EventsGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		A672F2C51E804556007C9FA2 /* up_half_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up_half_selected.png; path = ../BoutTimeAssetsAndMockups/BoutTimeAssets/up_half_selected.png; sourceTree = "<group>"; };
 		A672F2C61E804556007C9FA2 /* up_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = up_half.png; path = ../BoutTimeAssetsAndMockups/BoutTimeAssets/up_half.png; sourceTree = "<group>"; };
 		A672F2C71E804556007C9FA2 /* webview_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = webview_bar.png; path = ../BoutTimeAssetsAndMockups/BoutTimeAssets/webview_bar.png; sourceTree = "<group>"; };
+		A672F2DC1E807CC1007C9FA2 /* EventsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				A672F2A21E804478007C9FA2 /* AppDelegate.swift */,
 				A672F2A41E804478007C9FA2 /* ViewController.swift */,
 				A672F2A61E804478007C9FA2 /* Main.storyboard */,
+				A672F2DC1E807CC1007C9FA2 /* EventsGenerator.swift */,
 				A672F2A91E804478007C9FA2 /* Assets.xcassets */,
 				A672F2AB1E804478007C9FA2 /* LaunchScreen.storyboard */,
 				A672F2AE1E804478007C9FA2 /* Info.plist */,
@@ -219,6 +222,7 @@
 			files = (
 				A672F2A51E804478007C9FA2 /* ViewController.swift in Sources */,
 				A672F2A31E804478007C9FA2 /* AppDelegate.swift in Sources */,
+				A672F2DD1E807CC1007C9FA2 /* EventsGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
