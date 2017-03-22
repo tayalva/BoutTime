@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GameKit
 
 
 struct Events {
@@ -23,3 +24,19 @@ Events(event: "Apollo 11: Neil Armstrong is the first man to walk on the moon", 
 Events(event: "Roe Vs. Wade: Abortions before 24 weeks are made legal", year: 1973),
 Events(event: "President Reagan challenged Gorbachev to 'Tear down this wall!'", year: 1987)
 ]
+
+
+// assigns the events to an array to keep track of events that have been displayed already
+
+var eventsIndexArray: [Events] = []
+
+// resets the eventsIndexArray after each game, resulting in fresh events to be displayed
+
+func resetEvents() {
+    
+    eventsIndexArray = []
+    for events in events {
+        
+        eventsIndexArray.append(events)
+    }
+}
