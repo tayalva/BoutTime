@@ -21,8 +21,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Anc-gk-x1S">
+                                <rect key="frame" x="111" y="585" width="153" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="nextRoundButton" image="next_round_success.png"/>
+                                <connections>
+                                    <action selector="nextRoundButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cys-M1-pYN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsT-Ep-KOj">
+                                <rect key="frame" x="135" y="581" width="104" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="eventLabel4" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYw-hf-to5">
-                                <rect key="frame" x="16" y="418" width="305" height="122"/>
+                                <rect key="frame" x="16" y="425" width="305" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
@@ -36,7 +51,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="eventLabel1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdk-0v-nMX">
-                                <rect key="frame" x="16" y="28" width="305" height="122"/>
+                                <rect key="frame" x="16" y="35" width="305" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
@@ -50,7 +65,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxb-Jc-uUT">
-                                <rect key="frame" x="316" y="28" width="43" height="122"/>
+                                <rect key="frame" x="316" y="35" width="43" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="down1" image="down_full.png"/>
                                 <connections>
@@ -60,7 +75,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5Q-cV-zCS">
-                                <rect key="frame" x="316" y="418" width="43" height="122"/>
+                                <rect key="frame" x="316" y="425" width="43" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="up4" image="up_full.png"/>
                                 <connections>
@@ -68,7 +83,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="eventLabel2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gon-9S-m8T">
-                                <rect key="frame" x="16" y="158" width="305" height="122"/>
+                                <rect key="frame" x="16" y="165" width="305" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
@@ -82,7 +97,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="eventLabel3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmE-bK-d6q">
-                                <rect key="frame" x="16" y="288" width="305" height="122"/>
+                                <rect key="frame" x="16" y="295" width="305" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
@@ -96,7 +111,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAc-xN-pot">
-                                <rect key="frame" x="316" y="219" width="43" height="61"/>
+                                <rect key="frame" x="316" y="226" width="43" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="down2" image="down_half.png"/>
                                 <connections>
@@ -104,7 +119,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJO-uf-ldP">
-                                <rect key="frame" x="316" y="288" width="43" height="61"/>
+                                <rect key="frame" x="316" y="295" width="43" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="up3" image="up_half.png"/>
                                 <connections>
@@ -112,27 +127,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abs-wY-4Hs">
-                                <rect key="frame" x="316" y="349" width="43" height="61"/>
+                                <rect key="frame" x="316" y="356" width="43" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="down3" image="down_half.png"/>
                                 <connections>
                                     <action selector="moveEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GRZ-aN-y1V"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Anc-gk-x1S">
-                                <rect key="frame" x="111" y="585" width="153" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="nextRoundButton" image="next_round_success.png"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0:45" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsT-Ep-KOj">
-                                <rect key="frame" x="135" y="555" width="104" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6KC-OX-hvt">
-                                <rect key="frame" x="316" y="158" width="43" height="61"/>
+                                <rect key="frame" x="316" y="165" width="43" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="up2" image="up_half.png"/>
                                 <connections>
@@ -140,17 +143,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mf-ra-9pJ">
-                                <rect key="frame" x="109" y="275" width="156" height="42"/>
+                                <rect key="frame" x="109" y="282" width="156" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="play_again.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAV-Wq-nXb">
-                                <rect key="frame" x="41" y="555" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Test"/>
-                                <connections>
-                                    <action selector="test:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xTM-jD-i6e"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.15749090909957886" blue="0.29867827892303467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -163,6 +158,9 @@
                         <outlet property="eventLabel2" destination="gon-9S-m8T" id="1gg-5a-2zb"/>
                         <outlet property="eventLabel3" destination="wmE-bK-d6q" id="ehL-aZ-b4j"/>
                         <outlet property="eventLabel4" destination="RYw-hf-to5" id="Zuy-cI-vH7"/>
+                        <outlet property="nextRoundButton" destination="Anc-gk-x1S" id="gFb-fC-l7b"/>
+                        <outlet property="playAgainButton" destination="1Mf-ra-9pJ" id="HFp-RI-Em4"/>
+                        <outlet property="timerLabel" destination="CsT-Ep-KOj" id="fvD-L3-nR9"/>
                         <outlet property="up2" destination="6KC-OX-hvt" id="opM-ri-qyc"/>
                         <outlet property="up3" destination="dJO-uf-ldP" id="sEg-1L-1A7"/>
                         <outlet property="up4" destination="J5Q-cV-zCS" id="LVW-f5-HXN"/>

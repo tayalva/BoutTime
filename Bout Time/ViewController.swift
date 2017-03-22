@@ -8,6 +8,7 @@
 
 import UIKit
 import GameKit
+import AudioToolbox
 
 class ViewController: UIViewController {
     
@@ -23,6 +24,8 @@ class ViewController: UIViewController {
     var orderOfEventsArray: [Int] = []
     var userOrder: [Int] = []
     var correctOrder: [Int] = []
+    var score = 0
+    var roundNumber = 6
     
     
     @IBOutlet weak var down1: UIButton!
@@ -35,17 +38,29 @@ class ViewController: UIViewController {
     @IBOutlet weak var eventLabel2: UILabel!
     @IBOutlet weak var eventLabel3: UILabel!
     @IBOutlet weak var eventLabel4: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var nextRoundButton: UIButton!
+    @IBOutlet weak var playAgainButton: UIButton!
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        up4.setImage(UIImage(named: "up_full_selected.png"), for: UIControlState.normal)
         
-        resetEvents()
-        displayEvents()
         
+       newGame()
+        
+    }
+    
+    override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
+        
+        
+        // this vibrates the devices whenvever you shake it..you know..for fun. :)
+        
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+        
+        checkAnswers()
     }
 
     override func didReceiveMemoryWarning() {
@@ -145,26 +160,51 @@ class ViewController: UIViewController {
         
     }
     
+    // Checks to see if the events are in the correct order
+    
     func checkAnswers() {
         
         correctOrder = orderOfEventsArray.sorted()
+        nextRoundButton.isHidden = false
+        timerLabel.isHidden = true
         
         if (correctOrder == userOrder) {
             
             print("These are all correct!")
+            nextRoundButton.setImage(UIImage(named: "next_round_success.png"), for: UIControlState.normal)
+            score += 1
+
+            
         } else {
             
             print("These are not in the correct order")
+            nextRoundButton.setImage(UIImage(named: "next_round_fail.png"), for: UIControlState.normal)
         }
         
     }
     
-    
-    
-    @IBAction func test(_ sender: Any) {
+    @IBAction func nextRoundButton(_ sender: Any) {
+      
+        nextRound()
         
-        checkAnswers()
+    }
     
+    
+    func nextRound() {
+        
+        nextRoundButton.isHidden = true
+        resetEvents()
+        displayEvents()
+        roundNumber += 1
+        timerLabel.isHidden = false
+        
+    }
+    
+    func newGame() {
+        roundNumber = 0
+        playAgainButton.isHidden = true
+        nextRoundButton.isHidden = true
+        nextRound()
     }
 
 }
