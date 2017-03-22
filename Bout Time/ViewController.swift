@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     var yearOfEvent2: Int = 0
     var yearOfEvent3: Int = 0
     var yearOfEvent4: Int = 0
+    var orderOfEventsArray: [Int] = []
+    var userOrder: [Int] = []
+    var correctOrder: [Int] = []
     
     
     @IBOutlet weak var down1: UIButton!
@@ -58,6 +61,7 @@ class ViewController: UIViewController {
             let eventsDictionary1 = eventsIndexArray[indexOfSelectedEvents1]
             eventLabel1.text = eventsDictionary1.event
             yearOfEvent1 = eventsDictionary1.year
+            orderOfEventsArray.append(yearOfEvent1)
             eventsIndexArray.remove(at: indexOfSelectedEvents1)
         
         indexOfSelectedEvents2 = GKRandomSource.sharedRandom().nextInt(upperBound: eventsIndexArray.count)
@@ -65,6 +69,7 @@ class ViewController: UIViewController {
             let eventsDictionary2 = eventsIndexArray[indexOfSelectedEvents2]
             eventLabel2.text = eventsDictionary2.event
             yearOfEvent2 = eventsDictionary2.year
+            orderOfEventsArray.append(yearOfEvent2)
             eventsIndexArray.remove(at: indexOfSelectedEvents2)
         
         indexOfSelectedEvents3 = GKRandomSource.sharedRandom().nextInt(upperBound: eventsIndexArray.count)
@@ -72,6 +77,7 @@ class ViewController: UIViewController {
             let eventsDictionary3 = eventsIndexArray[indexOfSelectedEvents3]
             eventLabel3.text = eventsDictionary3.event
             yearOfEvent3 = eventsDictionary3.year
+            orderOfEventsArray.append(yearOfEvent3)
             eventsIndexArray.remove(at: indexOfSelectedEvents3)
         
         indexOfSelectedEvents4 = GKRandomSource.sharedRandom().nextInt(upperBound: eventsIndexArray.count)
@@ -80,7 +86,11 @@ class ViewController: UIViewController {
             let eventsDictionary4 = eventsIndexArray[indexOfSelectedEvents4]
             eventLabel4.text = eventsDictionary4.event
             yearOfEvent4 = eventsDictionary4.year
+            orderOfEventsArray.append(yearOfEvent4)
             eventsIndexArray.remove(at: indexOfSelectedEvents4)
+        
+        
+       userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
         
     }
     
@@ -108,59 +118,53 @@ class ViewController: UIViewController {
         switch button.tag {
             
         case 1:
-            
             swap(&eventLabel1.text, &eventLabel2.text)
-            
+            swap(&yearOfEvent1, &yearOfEvent2)
         case 2:
-            
             swap(&eventLabel1.text, &eventLabel2.text)
+            swap(&yearOfEvent1, &yearOfEvent2)
         case 3:
             swap(&eventLabel2.text, &eventLabel3.text)
+            swap(&yearOfEvent2, &yearOfEvent3)
         case 4:
             swap(&eventLabel2.text, &eventLabel3.text)
+            swap(&yearOfEvent2, &yearOfEvent3)
         case 5:
             swap(&eventLabel3.text, &eventLabel4.text)
+            swap(&yearOfEvent3, &yearOfEvent4)
         case 6:
             swap(&eventLabel4.text, &eventLabel3.text)
+            swap(&yearOfEvent4, &yearOfEvent3)
         default:
             
             print("whoopsies")
             return
         }
         
+       userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
+        
+    }
+    
+    func checkAnswers() {
+        
+        correctOrder = orderOfEventsArray.sorted()
+        
+        if (correctOrder == userOrder) {
+            
+            print("These are all correct!")
+        } else {
+            
+            print("These are not in the correct order")
+        }
+        
     }
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     @IBAction func test(_ sender: Any) {
         
-        resetEvents()
-        displayEvents()
+        checkAnswers()
+    
     }
 
 }
