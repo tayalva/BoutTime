@@ -25,7 +25,10 @@ class ViewController: UIViewController {
     var userOrder: [Int] = []
     var correctOrder: [Int] = []
     var score = 0
-    var roundNumber = 6
+    var numberOfRounds = 6
+    var roundNumber = 0
+    var timer: Timer!
+    var timerCount = 60
     
     
     @IBOutlet weak var down1: UIButton!
@@ -34,11 +37,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var up3: UIButton!
     @IBOutlet weak var down3: UIButton!
     @IBOutlet weak var up4: UIButton!
+    @IBOutlet weak var down4: UIButton!
+    @IBOutlet weak var up5: UIButton!
     @IBOutlet weak var eventLabel1: UILabel!
     @IBOutlet weak var eventLabel2: UILabel!
     @IBOutlet weak var eventLabel3: UILabel!
     @IBOutlet weak var eventLabel4: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var nextRoundButton: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
     
@@ -70,6 +76,7 @@ class ViewController: UIViewController {
     
     
     func displayEvents () {
+        
         
         indexOfSelectedEvents1 = GKRandomSource.sharedRandom().nextInt(upperBound: eventsIndexArray.count)
         
@@ -106,6 +113,32 @@ class ViewController: UIViewController {
         
         
        userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
+        correctOrder = orderOfEventsArray.sorted()
+        print(userOrder)
+        print(correctOrder)
+        
+        timerLabel.isHidden = false
+        timerCount = 60
+        timerLabel.text = "0:\(timerCount)"
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(endTimer), userInfo: nil, repeats: true)
+        
+    }
+    
+    func endTimer(timer:Timer) {
+        
+        if timerCount <= 0 {
+            
+            checkAnswers()
+        
+        } else if timerCount <= 9 {
+            
+            timerLabel.text = "0:0\(timerCount)"
+            timerCount -= 1
+        } else {
+            
+            timerLabel.text = "0:\(timerCount)"
+            timerCount -= 1
+        }
         
     }
     
@@ -130,33 +163,46 @@ class ViewController: UIViewController {
             return
         }
         
+        
+        
         switch button.tag {
             
         case 1:
             swap(&eventLabel1.text, &eventLabel2.text)
             swap(&yearOfEvent1, &yearOfEvent2)
+            userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
+            print(userOrder)
         case 2:
             swap(&eventLabel1.text, &eventLabel2.text)
             swap(&yearOfEvent1, &yearOfEvent2)
+              userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
+              print(userOrder)
         case 3:
             swap(&eventLabel2.text, &eventLabel3.text)
             swap(&yearOfEvent2, &yearOfEvent3)
+              userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
+              print(userOrder)
         case 4:
             swap(&eventLabel2.text, &eventLabel3.text)
             swap(&yearOfEvent2, &yearOfEvent3)
+              userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
+              print(userOrder)
         case 5:
             swap(&eventLabel3.text, &eventLabel4.text)
             swap(&yearOfEvent3, &yearOfEvent4)
+              userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
+              print(userOrder)
         case 6:
             swap(&eventLabel4.text, &eventLabel3.text)
             swap(&yearOfEvent4, &yearOfEvent3)
+              userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
+              print(userOrder)
         default:
             
             print("whoopsies")
             return
         }
         
-       userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
         
     }
     
@@ -164,31 +210,63 @@ class ViewController: UIViewController {
     
     func checkAnswers() {
         
-        correctOrder = orderOfEventsArray.sorted()
-        nextRoundButton.isHidden = false
-        timerLabel.isHidden = true
         
-        if (correctOrder == userOrder) {
-            
-            print("These are all correct!")
+        timer.invalidate()
+        timerLabel.isHidden = true
+        nextRoundButton.isHidden = false
+        
+        if userOrder == correctOrder && roundNumber != numberOfRounds  {
+           
             nextRoundButton.setImage(UIImage(named: "next_round_success.png"), for: UIControlState.normal)
             score += 1
 
             
+        } else if roundNumber != numberOfRounds  {
+            
+            nextRoundButton.setImage(UIImage(named: "next_round_fail.png"), for: UIControlState.normal)
         } else {
             
-            print("These are not in the correct order")
-            nextRoundButton.setImage(UIImage(named: "next_round_fail.png"), for: UIControlState.normal)
+            endGame()
         }
+        
         
     }
     
     @IBAction func nextRoundButton(_ sender: Any) {
       
         nextRound()
+        print(roundNumber)
         
     }
     
+    
+    @IBAction func playAgain(_ sender: Any) {
+        
+        newGame()
+    }
+    
+    func endGame() {
+        
+        eventLabel1.isHidden = true
+        eventLabel2.isHidden = true
+        eventLabel3.isHidden = true
+        eventLabel4.isHidden = true
+        timerLabel.isHidden = true
+        nextRoundButton.isHidden = true
+        down1.isHidden = true
+        up2.isHidden = true
+        down2.isHidden = true
+        up3.isHidden = true
+        down3.isHidden = true
+        up4.isHidden = true
+        down4.isHidden = true
+        up5.isHidden = true
+        
+        playAgainButton.isHidden = false
+        scoreLabel.isHidden = false
+        
+        scoreLabel.text = "You have scored \(score) out 6"
+    }
     
     func nextRound() {
         
@@ -196,14 +274,35 @@ class ViewController: UIViewController {
         resetEvents()
         displayEvents()
         roundNumber += 1
+        timerCount = 60
         timerLabel.isHidden = false
+        orderOfEventsArray.removeAll()
         
     }
     
     func newGame() {
         roundNumber = 0
+        numberOfRounds = 6
+        score = 0
         playAgainButton.isHidden = true
         nextRoundButton.isHidden = true
+        eventLabel1.isHidden = false
+        eventLabel2.isHidden = false
+        eventLabel3.isHidden = false
+        eventLabel4.isHidden = false
+        timerLabel.isHidden = false
+        nextRoundButton.isHidden = false
+        down1.isHidden = false
+        up2.isHidden = false
+        down2.isHidden = false
+         up3.isHidden = false
+        down3.isHidden = false
+        up4.isHidden = false
+        down4.isHidden = false
+        up5.isHidden = false
+        
+        playAgainButton.isHidden = true
+        scoreLabel.isHidden = true
         nextRound()
     }
 

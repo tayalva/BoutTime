@@ -384,6 +384,7 @@
 				A672F2B31E804478007C9FA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
