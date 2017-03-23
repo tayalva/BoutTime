@@ -142,19 +142,31 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func down1Button(_ sender: Any) {
-        
-        down1.setImage(UIImage(named: "down_full_selected.png"), for: UIControlState.normal)
-        
-        
+    // shows the "selected" image when the button is pressed
 
-    }
-  
-    @IBAction func Down1ButtonRelease(_ sender: Any) {
+    @IBAction func touchDownForImage(_ sender: Any) {
         
-        down1.setImage(UIImage(named: "down_full.png"), for: UIControlState.normal)
-
+        guard let button = sender as? UIButton else {
+            
+            return
+        }
+        
+        switch button.tag{
+            
+            
+        case 1: down1.setImage(UIImage(named: "down_full_selected.png"), for: UIControlState.normal)
+        case 2: up2.setImage(UIImage(named: "up_half_selected"), for: UIControlState.normal)
+        case 3: down2.setImage(UIImage(named: "down_half_selected.png"), for: UIControlState.normal)
+        case 4: up3.setImage(UIImage(named: "up_half_selected.png"), for: UIControlState.normal)
+        case 5: down3.setImage(UIImage(named: "down_half_selected.png"), for: UIControlState.normal)
+        case 6: up4.setImage(UIImage(named: "up_full_selected.png"), for: UIControlState.normal)
+            
+        default:
+        
+        return
+        }
     }
+
 
     @IBAction func moveEvent(_ sender: Any) {
         
@@ -168,31 +180,37 @@ class ViewController: UIViewController {
         switch button.tag {
             
         case 1:
+            down1.setImage(UIImage(named: "down_full.png"), for: UIControlState.normal)
             swap(&eventLabel1.text, &eventLabel2.text)
             swap(&yearOfEvent1, &yearOfEvent2)
             userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
             print(userOrder)
         case 2:
+            up2.setImage(UIImage(named: "up_half.png"), for: UIControlState.normal)
             swap(&eventLabel1.text, &eventLabel2.text)
             swap(&yearOfEvent1, &yearOfEvent2)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
               print(userOrder)
         case 3:
+            down2.setImage(UIImage(named: "down_half.png"), for: UIControlState.normal)
             swap(&eventLabel2.text, &eventLabel3.text)
             swap(&yearOfEvent2, &yearOfEvent3)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
               print(userOrder)
         case 4:
+            up3.setImage(UIImage(named: "up_half.png"), for: UIControlState.normal)
             swap(&eventLabel2.text, &eventLabel3.text)
             swap(&yearOfEvent2, &yearOfEvent3)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
               print(userOrder)
         case 5:
+            down3.setImage(UIImage(named: "down_half.png"), for: UIControlState.normal)
             swap(&eventLabel3.text, &eventLabel4.text)
             swap(&yearOfEvent3, &yearOfEvent4)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
               print(userOrder)
         case 6:
+            up4.setImage(UIImage(named: "up_full.png"), for: UIControlState.normal)
             swap(&eventLabel4.text, &eventLabel3.text)
             swap(&yearOfEvent4, &yearOfEvent3)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
