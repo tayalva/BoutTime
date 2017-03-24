@@ -29,6 +29,10 @@ class ViewController: UIViewController {
     var roundNumber = 0
     var timer: Timer!
     var timerCount = 60
+    var urlOfEvent1: String = ""
+    var urlOfEvent2: String = ""
+    var urlOfEvent3: String = ""
+    var urlOfEvent4: String = ""
     
     
     @IBOutlet weak var down1: UIButton!
@@ -52,12 +56,33 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
+// Do any additional setup after loading the view, typically from a nib.
         
        newGame()
         
+// enables each label to be tapped/pushed
+        
+        let tapEvent1 = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapForInfo))
+        eventLabel1.addGestureRecognizer(tapEvent1)
+        eventLabel1.isUserInteractionEnabled = true
+        
+        let tapEvent2 = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapForInfo))
+        eventLabel2.addGestureRecognizer(tapEvent2)
+        eventLabel2.isUserInteractionEnabled = true
+        
+        let tapEvent3 = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapForInfo))
+        eventLabel3.addGestureRecognizer(tapEvent3)
+        eventLabel3.isUserInteractionEnabled = true
+        
+        let tapEvent4 = UITapGestureRecognizer(target: self, action: #selector(ViewController.tapForInfo))
+        eventLabel4.addGestureRecognizer(tapEvent4)
+        eventLabel4.isUserInteractionEnabled = true
+        
     }
+
+    
+    
+//shake motion to check answers
     
     override func motionBegan(_ motion: UIEventSubtype, with event: UIEvent?) {
         
@@ -82,6 +107,7 @@ class ViewController: UIViewController {
         
             let eventsDictionary1 = eventsIndexArray[indexOfSelectedEvents1]
             eventLabel1.text = eventsDictionary1.event
+            urlOfEvent1 = eventsDictionary1.url
             yearOfEvent1 = eventsDictionary1.year
             orderOfEventsArray.append(yearOfEvent1)
             eventsIndexArray.remove(at: indexOfSelectedEvents1)
@@ -90,6 +116,7 @@ class ViewController: UIViewController {
         
             let eventsDictionary2 = eventsIndexArray[indexOfSelectedEvents2]
             eventLabel2.text = eventsDictionary2.event
+            urlOfEvent2 = eventsDictionary2.url
             yearOfEvent2 = eventsDictionary2.year
             orderOfEventsArray.append(yearOfEvent2)
             eventsIndexArray.remove(at: indexOfSelectedEvents2)
@@ -98,6 +125,7 @@ class ViewController: UIViewController {
         
             let eventsDictionary3 = eventsIndexArray[indexOfSelectedEvents3]
             eventLabel3.text = eventsDictionary3.event
+            urlOfEvent3 = eventsDictionary3.url
             yearOfEvent3 = eventsDictionary3.year
             orderOfEventsArray.append(yearOfEvent3)
             eventsIndexArray.remove(at: indexOfSelectedEvents3)
@@ -107,6 +135,7 @@ class ViewController: UIViewController {
         
             let eventsDictionary4 = eventsIndexArray[indexOfSelectedEvents4]
             eventLabel4.text = eventsDictionary4.event
+            urlOfEvent4 = eventsDictionary4.url
             yearOfEvent4 = eventsDictionary4.year
             orderOfEventsArray.append(yearOfEvent4)
             eventsIndexArray.remove(at: indexOfSelectedEvents4)
@@ -152,8 +181,6 @@ class ViewController: UIViewController {
         }
         
         switch button.tag{
-            
-            
         case 1: down1.setImage(UIImage(named: "down_full_selected.png"), for: UIControlState.normal)
         case 2: up2.setImage(UIImage(named: "up_half_selected"), for: UIControlState.normal)
         case 3: down2.setImage(UIImage(named: "down_half_selected.png"), for: UIControlState.normal)
@@ -183,41 +210,45 @@ class ViewController: UIViewController {
             down1.setImage(UIImage(named: "down_full.png"), for: UIControlState.normal)
             swap(&eventLabel1.text, &eventLabel2.text)
             swap(&yearOfEvent1, &yearOfEvent2)
+            swap(&urlOfEvent1, &urlOfEvent2)
             userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
             print(userOrder)
         case 2:
             up2.setImage(UIImage(named: "up_half.png"), for: UIControlState.normal)
             swap(&eventLabel1.text, &eventLabel2.text)
             swap(&yearOfEvent1, &yearOfEvent2)
+            swap(&urlOfEvent1, &urlOfEvent2)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
               print(userOrder)
         case 3:
             down2.setImage(UIImage(named: "down_half.png"), for: UIControlState.normal)
             swap(&eventLabel2.text, &eventLabel3.text)
             swap(&yearOfEvent2, &yearOfEvent3)
+            swap(&urlOfEvent2, &urlOfEvent3)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
               print(userOrder)
         case 4:
             up3.setImage(UIImage(named: "up_half.png"), for: UIControlState.normal)
             swap(&eventLabel2.text, &eventLabel3.text)
             swap(&yearOfEvent2, &yearOfEvent3)
+            swap(&urlOfEvent2, &urlOfEvent3)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
               print(userOrder)
         case 5:
             down3.setImage(UIImage(named: "down_half.png"), for: UIControlState.normal)
             swap(&eventLabel3.text, &eventLabel4.text)
             swap(&yearOfEvent3, &yearOfEvent4)
+            swap(&urlOfEvent3, &urlOfEvent4)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
               print(userOrder)
         case 6:
             up4.setImage(UIImage(named: "up_full.png"), for: UIControlState.normal)
             swap(&eventLabel4.text, &eventLabel3.text)
             swap(&yearOfEvent4, &yearOfEvent3)
+            swap(&urlOfEvent4, &urlOfEvent3)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
               print(userOrder)
         default:
-            
-            print("whoopsies")
             return
         }
         
@@ -322,6 +353,22 @@ class ViewController: UIViewController {
         playAgainButton.isHidden = true
         scoreLabel.isHidden = true
         nextRound()
+    }
+    
+    func tapForInfo(_ sender: UITapGestureRecognizer) {
+        
+        
+        switch  sender.view!.tag {
+            
+        case 1: print("label 1!")
+        case 2: print("label 2!")
+        case 3: print("label 3!")
+        case 4: print("label 4!")
+        default: return
+            
+        }
+        
+        
     }
 
 }

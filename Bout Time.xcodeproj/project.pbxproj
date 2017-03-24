@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A66A98D91E8579CD001B013D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66A98D81E8579CD001B013D /* WebViewController.swift */; };
 		A672F2A31E804478007C9FA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A672F2A21E804478007C9FA2 /* AppDelegate.swift */; };
 		A672F2A51E804478007C9FA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A672F2A41E804478007C9FA2 /* ViewController.swift */; };
 		A672F2A81E804478007C9FA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A672F2A61E804478007C9FA2 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A66A98D81E8579CD001B013D /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = ../WebViewController.swift; sourceTree = "<group>"; };
 		A672F29F1E804478007C9FA2 /* Bout Time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bout Time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A672F2A21E804478007C9FA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A672F2A41E804478007C9FA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			children = (
 				A672F2A21E804478007C9FA2 /* AppDelegate.swift */,
 				A672F2A41E804478007C9FA2 /* ViewController.swift */,
+				A66A98D81E8579CD001B013D /* WebViewController.swift */,
 				A672F2A61E804478007C9FA2 /* Main.storyboard */,
 				A672F2DC1E807CC1007C9FA2 /* EventsGenerator.swift */,
 				A672F2A91E804478007C9FA2 /* Assets.xcassets */,
@@ -223,6 +226,7 @@
 				A672F2A51E804478007C9FA2 /* ViewController.swift in Sources */,
 				A672F2A31E804478007C9FA2 /* AppDelegate.swift in Sources */,
 				A672F2DD1E807CC1007C9FA2 /* EventsGenerator.swift in Sources */,
+				A66A98D91E8579CD001B013D /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
