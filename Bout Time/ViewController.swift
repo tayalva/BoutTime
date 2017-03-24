@@ -33,6 +33,7 @@ class ViewController: UIViewController {
     var urlOfEvent2: String = ""
     var urlOfEvent3: String = ""
     var urlOfEvent4: String = ""
+    var urlOfEventClicked: String = ""
     
     
     @IBOutlet weak var down1: UIButton!
@@ -79,6 +80,8 @@ class ViewController: UIViewController {
         eventLabel4.isUserInteractionEnabled = true
         
     }
+    
+    
 
     
     
@@ -354,16 +357,28 @@ class ViewController: UIViewController {
         scoreLabel.isHidden = true
         nextRound()
     }
+
+    
+// function for action to be performed when each label is clicked
     
     func tapForInfo(_ sender: UITapGestureRecognizer) {
         
         
         switch  sender.view!.tag {
             
-        case 1: print("label 1!")
-        case 2: print("label 2!")
-        case 3: print("label 3!")
-        case 4: print("label 4!")
+        case 1:
+            urlOfEventClicked = urlOfEvent1
+            performSegue(withIdentifier: "ShowWebSegue", sender: self)
+            print("label 1!")
+        case 2:
+             urlOfEventClicked = urlOfEvent2
+            print("label 2!")
+        case 3:
+            urlOfEventClicked = urlOfEvent3
+            print("label 3!")
+        case 4:
+            urlOfEventClicked = urlOfEvent4
+            print("label 4!")
         default: return
             
         }
