@@ -38,6 +38,9 @@ class ViewController: UIViewController {
     var urlOfEventClicked: String = ""
     var eventNowClickable = false
     
+    var correctSound: SystemSoundID = 0
+    var incorrectSound: SystemSoundID = 1
+    
     
     @IBOutlet weak var down1: UIButton!
     @IBOutlet weak var up2: UIButton!
@@ -298,12 +301,14 @@ class ViewController: UIViewController {
         if userOrder == correctOrder && roundNumber != numberOfRounds  {
            
             nextRoundButton.setImage(UIImage(named: "next_round_success.png"), for: UIControlState.normal)
+            playCorrectSount()
             score += 1
 
             
         } else if roundNumber != numberOfRounds  {
             
             nextRoundButton.setImage(UIImage(named: "next_round_fail.png"), for: UIControlState.normal)
+            playIncorrectSound()
         } else {
             
             endGame()
@@ -345,6 +350,8 @@ class ViewController: UIViewController {
         roundNumber = 0
         numberOfRounds = 6
         score = 0
+        loadCorrectSound()
+        loadIncorrectSound()
         nextRound()
     }
 
@@ -388,6 +395,30 @@ class ViewController: UIViewController {
         
           performSegue(withIdentifier: "ShowWebSegue", sender: self)
         
+    }
+    
+    func loadCorrectSound() {
+        let pathToSoundFile = Bundle.main.path(forResource: "CorrectDing", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &correctSound)
+        
+    }
+    
+    func loadIncorrectSound() {
+        let pathToSoundFile = Bundle.main.path(forResource: "IncorrectBuzz", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: pathToSoundFile!)
+        AudioServicesCreateSystemSoundID(soundURL as CFURL, &incorrectSound)
+        
+    }
+    
+    func playCorrectSount() {
+        AudioServicesPlaySystemSound(correctSound)
+    }
+    
+    func playIncorrectSound() {
+        
+        AudioServicesPlaySystemSound(incorrectSound)
+
     }
 
 }

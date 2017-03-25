@@ -15,6 +15,8 @@
 		A672F2AA1E804478007C9FA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A672F2A91E804478007C9FA2 /* Assets.xcassets */; };
 		A672F2AD1E804478007C9FA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A672F2AB1E804478007C9FA2 /* LaunchScreen.storyboard */; };
 		A672F2DD1E807CC1007C9FA2 /* EventsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A672F2DC1E807CC1007C9FA2 /* EventsGenerator.swift */; };
+		A6CB8D3F1E871A1C0064BDB7 /* CorrectDing.wav in Resources */ = {isa = PBXBuildFile; fileRef = A6CB8D3D1E871A1C0064BDB7 /* CorrectDing.wav */; };
+		A6CB8D401E871A1C0064BDB7 /* IncorrectBuzz.wav in Resources */ = {isa = PBXBuildFile; fileRef = A6CB8D3E1E871A1C0064BDB7 /* IncorrectBuzz.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		A672F2AC1E804478007C9FA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A672F2AE1E804478007C9FA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A672F2DC1E807CC1007C9FA2 /* EventsGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsGenerator.swift; sourceTree = "<group>"; };
+		A6CB8D3D1E871A1C0064BDB7 /* CorrectDing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = CorrectDing.wav; path = ../../BoutTimeAssetsAndMockups/AudioClips/CorrectDing.wav; sourceTree = "<group>"; };
+		A6CB8D3E1E871A1C0064BDB7 /* IncorrectBuzz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = IncorrectBuzz.wav; path = ../../BoutTimeAssetsAndMockups/AudioClips/IncorrectBuzz.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				A672F2DC1E807CC1007C9FA2 /* EventsGenerator.swift */,
 				A672F2A91E804478007C9FA2 /* Assets.xcassets */,
 				A672F2AE1E804478007C9FA2 /* Info.plist */,
+				A6CB8D3D1E871A1C0064BDB7 /* CorrectDing.wav */,
+				A6CB8D3E1E871A1C0064BDB7 /* IncorrectBuzz.wav */,
 			);
 			path = "Bout Time";
 			sourceTree = "<group>";
@@ -134,8 +140,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A672F2AD1E804478007C9FA2 /* LaunchScreen.storyboard in Resources */,
+				A6CB8D401E871A1C0064BDB7 /* IncorrectBuzz.wav in Resources */,
 				A672F2AA1E804478007C9FA2 /* Assets.xcassets in Resources */,
 				A672F2A81E804478007C9FA2 /* Main.storyboard in Resources */,
+				A6CB8D3F1E871A1C0064BDB7 /* CorrectDing.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
