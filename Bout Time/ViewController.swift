@@ -36,6 +36,7 @@ class ViewController: UIViewController {
     var urlOfEvent3: String = ""
     var urlOfEvent4: String = ""
     var urlOfEventClicked: String = ""
+    var eventNowClickable = false
     
     
     @IBOutlet weak var down1: UIButton!
@@ -280,6 +281,7 @@ class ViewController: UIViewController {
         
         timer.invalidate()
         timerLabel.isHidden = true
+        eventNowClickable = true
         nextRoundButton.isHidden = false
         
         if userOrder == correctOrder && roundNumber != numberOfRounds  {
@@ -338,6 +340,7 @@ class ViewController: UIViewController {
     func nextRound() {
         
         nextRoundButton.isHidden = true
+        eventNowClickable = false
         resetEvents()
         displayEvents()
         roundNumber += 1
@@ -378,7 +381,8 @@ class ViewController: UIViewController {
     
     func tapForInfo(_ sender: UITapGestureRecognizer) {
         
-        
+        if eventNowClickable == true {
+            
         switch  sender.view!.tag {
             
         case 1:
@@ -401,7 +405,7 @@ class ViewController: UIViewController {
             
         }
         
-        
+        }
     }
     
     
