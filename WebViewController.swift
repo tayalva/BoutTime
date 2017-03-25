@@ -19,6 +19,8 @@ class WebViewController: UIViewController {
         
        
     }
+
+//loads url into the webview
     
     override func viewDidAppear(_ animated: Bool) {
         
@@ -38,7 +40,8 @@ class WebViewController: UIViewController {
     }
     
 
-  
+ // goes back to the game
+    
     @IBAction func backToGame(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)

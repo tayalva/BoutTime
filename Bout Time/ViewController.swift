@@ -123,7 +123,7 @@ class ViewController: UIViewController {
         }
     }
     
-    
+// displays events for each round
     
     func displayEvents () {
         
@@ -221,7 +221,8 @@ class ViewController: UIViewController {
         }
     }
 
-
+// creates logic for when the labels are clicked (can only be clicked once the round is over)
+    
     @IBAction func moveEvent(_ sender: Any) {
         
         guard let button = sender as? UIButton else {
@@ -240,42 +241,41 @@ class ViewController: UIViewController {
             swap(&yearOfEvent1, &yearOfEvent2)
             swap(&urlOfEvent1, &urlOfEvent2)
             userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
-            print(userOrder)
+            
         case 2:
             up2.setImage(UIImage(named: "up_half.png"), for: UIControlState.normal)
             swap(&eventLabel1.text, &eventLabel2.text)
             swap(&yearOfEvent1, &yearOfEvent2)
             swap(&urlOfEvent1, &urlOfEvent2)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
-              print(userOrder)
+            
         case 3:
             down2.setImage(UIImage(named: "down_half.png"), for: UIControlState.normal)
             swap(&eventLabel2.text, &eventLabel3.text)
             swap(&yearOfEvent2, &yearOfEvent3)
             swap(&urlOfEvent2, &urlOfEvent3)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
-              print(userOrder)
+            
         case 4:
             up3.setImage(UIImage(named: "up_half.png"), for: UIControlState.normal)
             swap(&eventLabel2.text, &eventLabel3.text)
             swap(&yearOfEvent2, &yearOfEvent3)
             swap(&urlOfEvent2, &urlOfEvent3)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
-              print(userOrder)
+            
         case 5:
             down3.setImage(UIImage(named: "down_half.png"), for: UIControlState.normal)
             swap(&eventLabel3.text, &eventLabel4.text)
             swap(&yearOfEvent3, &yearOfEvent4)
             swap(&urlOfEvent3, &urlOfEvent4)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
-              print(userOrder)
+    
         case 6:
             up4.setImage(UIImage(named: "up_full.png"), for: UIControlState.normal)
             swap(&eventLabel4.text, &eventLabel3.text)
             swap(&yearOfEvent4, &yearOfEvent3)
             swap(&urlOfEvent4, &urlOfEvent3)
               userOrder = [yearOfEvent1, yearOfEvent2, yearOfEvent3, yearOfEvent4]
-              print(userOrder)
         default:
             return
         }
@@ -345,22 +345,6 @@ class ViewController: UIViewController {
         roundNumber = 0
         numberOfRounds = 6
         score = 0
-        nextRoundButton.isHidden = true
-        eventLabel1.isHidden = false
-        eventLabel2.isHidden = false
-        eventLabel3.isHidden = false
-        eventLabel4.isHidden = false
-        timerLabel.isHidden = false
-        nextRoundButton.isHidden = false
-        down1.isHidden = false
-        up2.isHidden = false
-        down2.isHidden = false
-         up3.isHidden = false
-        down3.isHidden = false
-        up4.isHidden = false
-        down4.isHidden = false
-        up5.isHidden = false
-        
         nextRound()
     }
 
@@ -396,6 +380,8 @@ class ViewController: UIViewController {
         
         }
     }
+    
+ // function to perform the seque for the web 
     
     
     func segue(){
