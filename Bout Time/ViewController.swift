@@ -10,6 +10,8 @@ import UIKit
 import GameKit
 import AudioToolbox
 
+
+
 class ViewController: UIViewController {
     
     var indexOfSelectedEvents1: Int = 0
@@ -101,6 +103,19 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "WebViewController" {
+            
+            if let destinationVC : WebViewController = segue.destination as? WebViewController {
+            
+                
+                destinationVC.urlString = urlOfEventClicked
+            }
+        }
+    }
+    
     
     
     func displayEvents () {
@@ -359,7 +374,7 @@ class ViewController: UIViewController {
     }
 
     
-// function for action to be performed when each label is clicked
+// function for action to be performed when each label is tapped
     
     func tapForInfo(_ sender: UITapGestureRecognizer) {
         
@@ -368,21 +383,31 @@ class ViewController: UIViewController {
             
         case 1:
             urlOfEventClicked = urlOfEvent1
-            performSegue(withIdentifier: "ShowWebSegue", sender: self)
-            print("label 1!")
+           segue()
+           
         case 2:
              urlOfEventClicked = urlOfEvent2
-            print("label 2!")
+             segue()
+            print(urlOfEventClicked)
         case 3:
             urlOfEventClicked = urlOfEvent3
-            print("label 3!")
+            segue()
+            print(urlOfEventClicked)
         case 4:
             urlOfEventClicked = urlOfEvent4
-            print("label 4!")
+            segue()
+            print(urlOfEventClicked)
         default: return
             
         }
         
+        
+    }
+    
+    
+    func segue(){
+        
+          performSegue(withIdentifier: "ShowWebSegue", sender: self)
         
     }
 
