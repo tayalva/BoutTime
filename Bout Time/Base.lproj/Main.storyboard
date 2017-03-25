@@ -104,7 +104,7 @@
                                     <constraint firstAttribute="width" constant="43" id="Dvr-sF-kBj"/>
                                     <constraint firstAttribute="height" constant="122" id="LGV-td-ybx"/>
                                 </constraints>
-                                <state key="normal" title="down1" image="down_full.png"/>
+                                <state key="normal" title="down1" image="down_full"/>
                                 <connections>
                                     <action selector="moveEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a4L-Yj-WFE"/>
                                     <action selector="touchDownForImage:" destination="BYZ-38-t0r" eventType="touchDown" id="DhM-gW-Ipc"/>
@@ -116,7 +116,7 @@
                                     <constraint firstAttribute="height" constant="122" id="DF2-Bn-Dob"/>
                                     <constraint firstAttribute="width" constant="43" id="FAq-YX-8k5"/>
                                 </constraints>
-                                <state key="normal" title="up4" image="up_full.png"/>
+                                <state key="normal" title="up4" image="up_full"/>
                                 <connections>
                                     <action selector="moveEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yii-Jz-ECG"/>
                                     <action selector="touchDownForImage:" destination="BYZ-38-t0r" eventType="touchDown" id="meT-6C-PdL"/>
@@ -160,7 +160,7 @@
                                     <constraint firstAttribute="width" constant="43" id="DFa-Zv-l7o"/>
                                     <constraint firstAttribute="height" constant="61" id="uIz-AC-I6r"/>
                                 </constraints>
-                                <state key="normal" title="down2" image="down_half.png"/>
+                                <state key="normal" title="down2" image="down_half"/>
                                 <connections>
                                     <action selector="moveEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d8i-cs-iya"/>
                                     <action selector="touchDownForImage:" destination="BYZ-38-t0r" eventType="touchDown" id="Ich-Tq-YgS"/>
@@ -172,7 +172,7 @@
                                     <constraint firstAttribute="width" constant="43" id="6GH-aF-GuC"/>
                                     <constraint firstAttribute="height" constant="61" id="ZeU-Ic-yCx"/>
                                 </constraints>
-                                <state key="normal" title="up3" image="up_half.png"/>
+                                <state key="normal" title="up3" image="up_half"/>
                                 <connections>
                                     <action selector="moveEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zsQ-Rh-ciC"/>
                                     <action selector="touchDownForImage:" destination="BYZ-38-t0r" eventType="touchDown" id="Rii-ta-iFW"/>
@@ -184,7 +184,7 @@
                                     <constraint firstAttribute="height" constant="61" id="RIb-rF-nVh"/>
                                     <constraint firstAttribute="width" constant="43" id="ydf-uh-nR1"/>
                                 </constraints>
-                                <state key="normal" title="down3" image="down_half.png"/>
+                                <state key="normal" title="down3" image="down_half"/>
                                 <connections>
                                     <action selector="moveEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GRZ-aN-y1V"/>
                                     <action selector="touchDownForImage:" destination="BYZ-38-t0r" eventType="touchDown" id="rhf-c8-UOd"/>
@@ -196,7 +196,7 @@
                                     <constraint firstAttribute="width" constant="43" id="ExW-2E-ZAC"/>
                                     <constraint firstAttribute="height" constant="61" id="WGs-Pg-ATU"/>
                                 </constraints>
-                                <state key="normal" title="up2" image="up_half.png"/>
+                                <state key="normal" title="up2" image="up_half"/>
                                 <connections>
                                     <action selector="moveEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D2c-eD-XOe"/>
                                     <action selector="touchDownForImage:" destination="BYZ-38-t0r" eventType="touchDown" id="BJb-Ru-U8R"/>
@@ -208,7 +208,7 @@
                                     <constraint firstAttribute="height" constant="39" id="JOJ-5V-Nef"/>
                                     <constraint firstAttribute="width" constant="153" id="WQJ-ec-k25"/>
                                 </constraints>
-                                <state key="normal" title="nextRoundButton" image="next_round_success.png"/>
+                                <state key="normal" title="nextRoundButton" image="next_round_success"/>
                                 <connections>
                                     <action selector="nextRoundButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cys-M1-pYN"/>
                                 </connections>
@@ -312,7 +312,7 @@
                                     <constraint firstAttribute="width" constant="156" id="0Tf-On-M35"/>
                                     <constraint firstAttribute="height" constant="42" id="j7r-ci-Tv5"/>
                                 </constraints>
-                                <state key="normal" image="play_again.png"/>
+                                <state key="normal" image="play_again"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="JF3-zY-TlB"/>
                                 </connections>
@@ -405,11 +405,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="down_full.png" width="158" height="457"/>
-        <image name="down_half.png" width="158" height="229"/>
-        <image name="next_round_success.png" width="558" height="142"/>
-        <image name="play_again.png" width="450" height="142"/>
-        <image name="up_full.png" width="158" height="457"/>
-        <image name="up_half.png" width="158" height="229"/>
+        <image name="down_full" width="158" height="457"/>
+        <image name="down_half" width="158" height="229"/>
+        <image name="next_round_success" width="558" height="142"/>
+        <image name="play_again" width="450" height="142"/>
+        <image name="up_full" width="158" height="457"/>
+        <image name="up_half" width="158" height="229"/>
     </resources>
 </document>
