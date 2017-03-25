@@ -65,9 +65,9 @@
 				A66A98D81E8579CD001B013D /* WebViewController.swift */,
 				A648D46A1E86DDDA005C0348 /* EndOfGameController.swift */,
 				A672F2A61E804478007C9FA2 /* Main.storyboard */,
+				A672F2AB1E804478007C9FA2 /* LaunchScreen.storyboard */,
 				A672F2DC1E807CC1007C9FA2 /* EventsGenerator.swift */,
 				A672F2A91E804478007C9FA2 /* Assets.xcassets */,
-				A672F2AB1E804478007C9FA2 /* LaunchScreen.storyboard */,
 				A672F2AE1E804478007C9FA2 /* Info.plist */,
 			);
 			path = "Bout Time";
@@ -271,6 +271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KNEDT6Y55K;
 				INFOPLIST_FILE = "Bout Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -284,6 +285,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KNEDT6Y55K;
 				INFOPLIST_FILE = "Bout Time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

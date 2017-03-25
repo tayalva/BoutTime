@@ -53,6 +53,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var eventLabel4: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var nextRoundButton: UIButton!
+    @IBOutlet weak var instructionLabel: UILabel!
     
     
 
@@ -204,6 +205,7 @@ class ViewController: UIViewController {
             return
         }
         
+        if eventNowClickable == false {
         switch button.tag{
         case 1: down1.setImage(UIImage(named: "down_full_selected.png"), for: UIControlState.normal)
         case 2: up2.setImage(UIImage(named: "up_half_selected"), for: UIControlState.normal)
@@ -216,6 +218,7 @@ class ViewController: UIViewController {
         
         return
         }
+        }
     }
 
 
@@ -227,7 +230,8 @@ class ViewController: UIViewController {
         }
         
         
-        
+        if eventNowClickable == false {
+            
         switch button.tag {
             
         case 1:
@@ -275,6 +279,7 @@ class ViewController: UIViewController {
         default:
             return
         }
+        }
         
         
     }
@@ -288,6 +293,7 @@ class ViewController: UIViewController {
         timerLabel.isHidden = true
         eventNowClickable = true
         nextRoundButton.isHidden = false
+        instructionLabel.text = "Click an event for more info"
         
         if userOrder == correctOrder && roundNumber != numberOfRounds  {
            
@@ -324,6 +330,7 @@ class ViewController: UIViewController {
     func nextRound() {
         
         nextRoundButton.isHidden = true
+        instructionLabel.text = "Shake To Check Answers"
         eventNowClickable = false
         resetEvents()
         displayEvents()

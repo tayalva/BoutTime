@@ -223,6 +223,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake To Check Answers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8T-eS-nJg">
+                                <rect key="frame" x="16" y="638" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.57856649160385132" blue="0.00033426805748604238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.15749090909957886" blue="0.29867827892303467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -235,6 +241,7 @@
                             <constraint firstItem="y4a-Q2-yCM" firstAttribute="leading" secondItem="rdk-0v-nMX" secondAttribute="trailing" constant="-29" id="Bfa-ch-AMy"/>
                             <constraint firstAttribute="leadingMargin" secondItem="wmE-bK-d6q" secondAttribute="leading" id="Dnu-nV-mec"/>
                             <constraint firstItem="zxb-Jc-uUT" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="EJL-Nz-jWy"/>
+                            <constraint firstItem="y8T-eS-nJg" firstAttribute="top" secondItem="CsT-Ep-KOj" secondAttribute="bottom" constant="-2" id="EKn-MJ-dai"/>
                             <constraint firstItem="6KC-OX-hvt" firstAttribute="leading" secondItem="d8K-gU-h53" secondAttribute="trailing" constant="-33" id="FYA-1M-ggg"/>
                             <constraint firstItem="zxb-Jc-uUT" firstAttribute="leading" secondItem="y4a-Q2-yCM" secondAttribute="trailing" constant="-33" id="Gul-ku-6bI"/>
                             <constraint firstItem="G4e-oN-Uwb" firstAttribute="top" secondItem="bBf-Sh-DqS" secondAttribute="bottom" constant="8" id="HNl-ix-p1A"/>
@@ -261,12 +268,15 @@
                             <constraint firstAttribute="leadingMargin" secondItem="rdk-0v-nMX" secondAttribute="leading" id="kRq-aI-5cE"/>
                             <constraint firstItem="Anc-gk-x1S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mRo-c1-4XR"/>
                             <constraint firstItem="d8K-gU-h53" firstAttribute="top" secondItem="y4a-Q2-yCM" secondAttribute="bottom" constant="8" id="nG7-pe-DMo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y8T-eS-nJg" secondAttribute="trailing" id="oxT-tz-KWb"/>
                             <constraint firstItem="J5Q-cV-zCS" firstAttribute="leading" secondItem="G4e-oN-Uwb" secondAttribute="trailing" constant="-33" id="p4B-ak-Dgb"/>
                             <constraint firstItem="G4e-oN-Uwb" firstAttribute="leading" secondItem="RYw-hf-to5" secondAttribute="trailing" constant="-29" id="q4P-Yn-TB7"/>
                             <constraint firstItem="6KC-OX-hvt" firstAttribute="top" secondItem="zxb-Jc-uUT" secondAttribute="bottom" constant="8" id="rCR-ZJ-G8B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gon-9S-m8T" secondAttribute="trailing" constant="43" id="rty-Ui-G62"/>
+                            <constraint firstItem="y8T-eS-nJg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="smm-fH-0H2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wmE-bK-d6q" secondAttribute="trailing" constant="43" id="tbd-8L-AtK"/>
                             <constraint firstItem="6KC-OX-hvt" firstAttribute="leading" secondItem="gon-9S-m8T" secondAttribute="trailing" id="unB-Sc-739"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="y8T-eS-nJg" secondAttribute="bottom" constant="8" id="xfq-nj-NWL"/>
                         </constraints>
                     </view>
                     <connections>
@@ -278,6 +288,7 @@
                         <outlet property="eventLabel2" destination="gon-9S-m8T" id="1gg-5a-2zb"/>
                         <outlet property="eventLabel3" destination="wmE-bK-d6q" id="ehL-aZ-b4j"/>
                         <outlet property="eventLabel4" destination="RYw-hf-to5" id="Zuy-cI-vH7"/>
+                        <outlet property="instructionLabel" destination="y8T-eS-nJg" id="SF1-ZF-EeC"/>
                         <outlet property="nextRoundButton" destination="Anc-gk-x1S" id="gFb-fC-l7b"/>
                         <outlet property="playAgainButton" destination="1Mf-ra-9pJ" id="HFp-RI-Em4"/>
                         <outlet property="scoreLabel" destination="whU-OD-b2c" id="EAX-Fo-mbd"/>
@@ -286,8 +297,8 @@
                         <outlet property="up3" destination="dJO-uf-ldP" id="sEg-1L-1A7"/>
                         <outlet property="up4" destination="J5Q-cV-zCS" id="LVW-f5-HXN"/>
                         <outlet property="up5" destination="J5Q-cV-zCS" id="7oW-ok-XQ9"/>
-                        <segue destination="kDG-10-Bzn" kind="presentation" identifier="ShowWebSegue" modalTransitionStyle="flipHorizontal" id="Aco-aV-nPH"/>
-                        <segue destination="mwS-Hl-NSC" kind="presentation" identifier="EndOfGameSegue" modalTransitionStyle="crossDissolve" id="Y7q-xn-M7h"/>
+                        <segue destination="kDG-10-Bzn" kind="presentation" identifier="ShowWebSegue" id="Aco-aV-nPH"/>
+                        <segue destination="mwS-Hl-NSC" kind="presentation" identifier="EndOfGameSegue" id="Y7q-xn-M7h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -318,7 +329,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whU-OD-b2c">
-                                <rect key="frame" x="105" y="218" width="164" height="24"/>
+                                <rect key="frame" x="37" y="243" width="300" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -326,12 +337,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.1574808359" blue="0.29866373540000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1Mf-ra-9pJ" firstAttribute="top" secondItem="whU-OD-b2c" secondAttribute="bottom" constant="70" id="2lr-fm-PwK"/>
-                            <constraint firstItem="whU-OD-b2c" firstAttribute="leading" secondItem="3Xe-kc-Jci" secondAttribute="leadingMargin" constant="89" id="Ahw-8e-udC"/>
+                            <constraint firstItem="1Mf-ra-9pJ" firstAttribute="top" secondItem="whU-OD-b2c" secondAttribute="bottom" constant="45" id="Azg-d8-yqf"/>
                             <constraint firstItem="1Mf-ra-9pJ" firstAttribute="centerY" secondItem="3Xe-kc-Jci" secondAttribute="centerY" id="C2S-HY-qdS"/>
                             <constraint firstItem="1Mf-ra-9pJ" firstAttribute="centerX" secondItem="3Xe-kc-Jci" secondAttribute="centerX" id="G96-83-PRn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="whU-OD-b2c" secondAttribute="trailing" constant="90" id="T3W-pp-fLo"/>
-                            <constraint firstItem="whU-OD-b2c" firstAttribute="top" secondItem="MZD-sN-72i" secondAttribute="bottom" constant="198" id="jCx-De-Nxn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="whU-OD-b2c" secondAttribute="trailing" constant="22" id="gOC-QI-jsb"/>
+                            <constraint firstItem="whU-OD-b2c" firstAttribute="leading" secondItem="3Xe-kc-Jci" secondAttribute="leadingMargin" constant="21" id="rUp-ZW-xj4"/>
                         </constraints>
                     </view>
                     <connections>
@@ -340,7 +350,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mXs-Dk-gZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="790" y="462"/>
+            <point key="canvasLocation" x="789.60000000000002" y="461.91904047976016"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="bfw-Aa-9Qw">
