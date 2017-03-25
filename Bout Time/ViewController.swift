@@ -52,15 +52,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var eventLabel3: UILabel!
     @IBOutlet weak var eventLabel4: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var nextRoundButton: UIButton!
-    @IBOutlet weak var playAgainButton: UIButton!
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-// Do any additional setup after loading the view, typically from a nib.
         
        newGame()
         
@@ -107,7 +104,15 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "WebViewController" {
+        if segue.identifier == "EndOfGameSegue" {
+            
+            if let destination : EndOfGameController = segue.destination as? EndOfGameController {
+                
+                destination.score = score
+            }
+        }
+        
+        if segue.identifier == "ShowWebSegue" {
             
             if let destinationVC : WebViewController = segue.destination as? WebViewController {
             
@@ -309,32 +314,11 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func playAgain(_ sender: Any) {
-        
-        newGame()
-    }
-    
+
     func endGame() {
         
-        eventLabel1.isHidden = true
-        eventLabel2.isHidden = true
-        eventLabel3.isHidden = true
-        eventLabel4.isHidden = true
-        timerLabel.isHidden = true
-        nextRoundButton.isHidden = true
-        down1.isHidden = true
-        up2.isHidden = true
-        down2.isHidden = true
-        up3.isHidden = true
-        down3.isHidden = true
-        up4.isHidden = true
-        down4.isHidden = true
-        up5.isHidden = true
+      performSegue(withIdentifier: "EndOfGameSegue", sender: self)
         
-        playAgainButton.isHidden = false
-        scoreLabel.isHidden = false
-        
-        scoreLabel.text = "You have scored \(score) out 6"
     }
     
     func nextRound() {
@@ -354,7 +338,6 @@ class ViewController: UIViewController {
         roundNumber = 0
         numberOfRounds = 6
         score = 0
-        playAgainButton.isHidden = true
         nextRoundButton.isHidden = true
         eventLabel1.isHidden = false
         eventLabel2.isHidden = false
@@ -371,8 +354,6 @@ class ViewController: UIViewController {
         down4.isHidden = false
         up5.isHidden = false
         
-        playAgainButton.isHidden = true
-        scoreLabel.isHidden = true
         nextRound()
     }
 
@@ -387,6 +368,7 @@ class ViewController: UIViewController {
             
         case 1:
             urlOfEventClicked = urlOfEvent1
+            print(urlOfEventClicked)
            segue()
            
         case 2:
